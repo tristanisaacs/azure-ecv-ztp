@@ -8,7 +8,7 @@ from pyedgeconnect import EdgeConnect
 """
 
 This script takes the URL of an EC-V in Azure,
-identifies the non-primary interfaces and their MAC addresses,
+identifies the primary interfaces and their MAC addresses,
 connects to the EC-V via SSH key authentication,
 creates a username/password that is allowed to login,
 uses the EC-V REST API to assign the MAC addresses to the correct interfaces,
@@ -20,7 +20,6 @@ Thus enabling Zero-Touch Provisioning for EC-Vs in Azure.
 
 # variables for the Azure REST API portion of the script
 api_url = 'https://management.azure.com/subscriptions/subscriptionID/resourceGroups/resourceGroup/providers/Microsoft.Compute/virtualMachines/vmName?api-version=2022-08-01'
-#note this was a temporary token given to me while logged into the Azure portal. it will expire.
 api_token = '' #enter your api token here
 response = None
 hostname = ''
